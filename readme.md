@@ -16,6 +16,38 @@
 - `npm start` to run app in production mode
 - `npm run dev` to run app in development mode
 
+<br/>
+
+## 🗂 Project Breakdown
+    
+### 1. API Server (Backend)
+    
+Directory `server`
+    
+**Football Dimes Backend supports the following API endpoints:**
+
+View the complete API documentation <a href="https://github.com/Aihab1/Football-Dimes/tree/main/server#readme">here</a>.
+
+`GET` **/todo**
+
+`GET` **/todo/new**
+
+`PUT` **/todo/complete/:id**
+
+`POST` **/todo**
+
+`DELETE` **/todo/:id**
+ 
+#### Authentication Endpoints:
+
+`GET` **/**
+
+`POST` **/signup**
+
+`POST` **/login**
+
+`POST` **/logout**
+
 ## Routes
 
 Routes are broken up into two routers and two controller classes.
@@ -27,6 +59,8 @@ This is pages that render EJS templates, Which shows Task of user Logged in User
 ### userRouter/UserauthController
 
 This is pages that render EJS templates that contains User Signin and Signup forms. The routes are registered in server.js using the userRoutes router and the corresponding function can be defined as a method in the UserauthController class in the controllers folder.
+
+### 2. Features (Frontend)
 
 ## Views
 
@@ -53,4 +87,4 @@ User sign up and Login Pages
 
 
 
-Enjoy!
+ Enjoy DEV !!!
