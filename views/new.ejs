@@ -1,0 +1,41 @@
+<%- include("partials/head.ejs") %>
+
+
+<main>
+  <!-- <h1>Create a New Todo</h1>
+  <form action="/todo" method="post">
+      <input type="text" name="message">
+      <input type="submit" value="create new todo">
+  </form> -->
+
+  <h1> Create a New TO DO LIST</h1>
+
+  <form id="task-form" class="container" method="Post" action="/todo">
+    <input
+      type="text"
+      name="message"
+      id="task-input"
+      placeholder=" Enter new Task "
+    />
+    <input
+      type="number"
+      name="priority"
+      id="priority"
+      placeholder=" Enter your priority "
+    />
+
+    <input type="submit" id="submit"  />
+  </form>
+  <script>
+    $(document).ready(function(){
+    // Get value on button click and show alert
+    // var x =   $("#priority").val();
+    $("#submit").click(function(){
+    var x =   $("#priority").val();
+    console.log(typeof(x));
+      if( x.length > 1 )  
+        alert("Please enter value in between 1-9");
+    });
+});
+  </script>
+</main>

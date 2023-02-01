@@ -1,0 +1,98 @@
+<%- include("partials/head.ejs") %>
+
+<main>
+  <h1>The Todos App</h1>
+  <form action="/logout" method="post">
+    <input type="submit" value="logout"  class="logout"/>
+  </form>
+  <a href="/todo/new"><button class="create-new">Create Todo</button></a>
+
+  <!-- <ul>
+    <% pending.forEach((todo, index) => { %>
+
+    <a href="/todo/<%= todo._id %>">
+      <li class="todo <%= todo.completed ? 'completed' : null %>">
+        <%= todo.message %>
+      </li>
+    </a>
+
+    <% }) %>
+  </ul> -->
+  <h1><%=username%></h1>
+<% pending.sort((a,b)=>{ return a.priority - b.priority;} )%>
+<% completedTask.sort((a,b)=>{ return a.priority - b.priority;} )%>
+  <h2>Pending tasks <%= pending.length%></h2>
+  <div class="table-container">
+    <br>
+
+    <table class="task-list" id=" task-list">
+      <tr>
+        <th class="R1">Sr. No</th>
+        <th class="R2">TASKS</th>
+        <th class="R3">Priority</th>
+        <th class="R4">Delete</th>
+        <th class="R5">complete</th>
+      </tr>
+      <% pending.forEach(( todo, counter )=>{%>
+      <tr class="tasks-display" id="task-active">
+        <td><%=counter+1%></td>
+        <td>  
+             
+            <%= todo.message %>
+          
+      
+        </td>
+        <td><%=todo.priority %></td>
+        <td> <form action="/todo/<%=todo._id%>?_method=DELETE" method="post">
+            <button type="submit" value="delete todo">
+                <i class="fa-sharp fa-solid fa-xmark"></i>
+            </button>
+        </form></td>
+        <td>
+            <form action="/todo/complete/<%=todo._id%>?_method=PUT" method="post">
+                <!-- <input type="submit" value="mark completed"/> -->
+                <button type="submit" value="delete todo">
+                    <i class="fa-sharp fa-solid fa-check"></i>
+                </button>
+            </form>
+        </td>
+      </tr>
+      <% counter+=counter+1; })%>
+    </table>
+    </div>
+    <br >
+    <br >
+    <h2>compeleted <%= complete %></h2>
+  <div class=" table-container com-task-table <%= complete> 0?'Display-table':'hide-table'%>">
+   
+      
+    
+    <table class="task-list" id=" task-list">
+        <tr>
+          <br >
+        <th class="R1">Sr. No</th>
+        <th class="R2">TASKS</th>
+        <th class="R4">Priority</th>
+       <th>delete</th>
+      </tr>
+      <!-- <% var cntcomplete = 0%> -->
+      <% completedTask.forEach(( todo, counter )=>{%>
+      <tr class="tasks-display" id="task">
+        <td><%=counter+1%></td>
+        <td>
+              <%= todo.message %>
+        </td>
+        <td><%=todo.priority %></td>
+        <td> <form action="/todo/<%=todo._id%>?_method=DELETE" method="post">
+            <button type="submit" value="delete todo">
+                <i class="fa-sharp fa-solid fa-xmark"></i>
+            </button>
+        </form></td>
+      </tr>
+      <% counter+=counter+1; })%>
+    </table>
+  </div>
+  <script>
+    $
+  </script>
+</main>
