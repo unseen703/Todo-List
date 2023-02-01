@@ -1,10 +1,15 @@
-# Express ejs Template
+<h1 align="center">
+  <a href="https://task-manager-0crj.onrender.com">
+   Task Master
+  </a>
+</h1>
 
 ## Setup
 
 - clone the new project from github
 - run `npm install` from the main folder (the one with package.json)
 - add your enviorment variables file to `.env`
+- run `npm start`
 
 ## Scripts
 
