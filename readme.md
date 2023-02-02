@@ -62,7 +62,7 @@ This is pages that render EJS templates that contains User Signin and Signup for
 
 ## Views
 
-An EJS file making use of the head, header and footer partials for clreating a template for our web application.
+An EJS file making use of partials for clreating a template for our web application.
 
  # index.ejs 
 Displays the tasks that are pending and completed for a registered user
